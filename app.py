@@ -7,7 +7,7 @@ from dateutil import parser
 ######### execute: streamlit run 'app.py' #######
 #################################################
 import plotly.express as px
-from PIL import Image
+# from PIL import Image
 
 st.set_page_config(page_title='Dashboard')
 st.header('Performance Overview')
@@ -196,9 +196,9 @@ dcu_info_form()
 
 # --- DISPLAY IMAGE & DATAFRAME
 col1, col2 = st.columns(2)
-image = Image.open('images/survey.jpg')
+# image = Image.open('images/survey.jpg')
 
-col1.image(image, caption='Designed by slidesgo / Freepik', use_column_width=True)
+# col1.image(image, caption='Designed by slidesgo / Freepik', use_column_width=True)
 
 # col2.dataframe(df_dc_drop_info.astype(str))
 #
