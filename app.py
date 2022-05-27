@@ -2,16 +2,12 @@ import pandas as pd
 import streamlit as st
 from datetime import date, datetime
 from dateutil import parser
-#################################################
-######### go to the folder Exce_Webapp ##########
-######### execute: streamlit run 'app.py' #######
-#################################################
+
 import plotly.express as px
 # from PIL import Image
 
-st.set_page_config(page_title='Dashboard')
-st.header('Performance Overview')
-st.subheader('Installed DCU Status')
+st.set_page_config(page_title='Dashboard Version beta')
+st.header('Performance Overview Version beta')
 
 ### --- LOAD DATAFRAME
 excel_file = 'plc_to_st.xlsx'
@@ -21,6 +17,7 @@ df = pd.read_excel(excel_file, sheet_name=sheet_name)
 del df["Unnamed: 0"]
 df.rename(columns={"Collector/DCU": "DCU", "Meter ID": "Nb Meter"}, inplace=True)
 
+st.subheader(f'Installed DCU Status on {df.columns[-1]}')
 st.write(df.iloc[:, :-1].astype(str))
 
 # df_rw_ww = pd.read_excel("df_rw_ww.xlsx", engine="openpyxl", parse_dates=True, dtype=str)
